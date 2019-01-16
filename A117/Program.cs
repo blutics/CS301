@@ -12,12 +12,12 @@ namespace A117
     {
         static void Main(string[] args)
         {
-            StreamReader file = new StreamReader("test.txt");
+            StreamReader file = new StreamReader("test.txt");//SteamReader will be used for reading text from file
             int n = int.Parse(file.ReadLine());
-            Employee[] employeelist = new Employee[n];
-            for(int i = 0; i < n; i++)
+            Employee[] employeelist = new Employee[n];//making a array for employee objects
+            for(int i = 0; i < n; i++)//instanciating each employee, n times
             {
-                employeelist[i] = new Employee(file.ReadLine());
+                employeelist[i] = new Employee(file.ReadLine());//init!
                 employeelist[i].print();
             }
         }
