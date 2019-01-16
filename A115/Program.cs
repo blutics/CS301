@@ -35,7 +35,7 @@ namespace A115
                     //TeenAge Condition
                     for (int i = 1; i <= age; i++)//Iterating age times
                     {
-                        Console.WriteLine(String.Format("TEEN POWER CHARGED!!! {0}", i));
+                        Console.WriteLine(String.Format("TEEN POWER!!! {0}", i));
                     }
                     Console.WriteLine(String.Format("\nWe found total of {0} TEEN POWER on you.\nCongratulation!\n", age));
                 }
