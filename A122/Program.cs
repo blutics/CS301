@@ -34,12 +34,13 @@ namespace A122
                     {
                         if (employeelist[j].id == target)
                         {
-                            Console.WriteLine("===================================");
-                            Console.WriteLine(String.Format("|{0,-10:s} : {1,-20:s}|", "Target ID", target));
-                            Console.WriteLine(String.Format("|{0,-10:s} : {1,-20:d}|", "Resulted Name", employeelist[j].name));
-                            Console.WriteLine(String.Format("|{0,-10:s} : {1,-20:d}|", "Position", j));
-                            Console.WriteLine(String.Format("|{0,-10:s} : {1,-20:s}|", "Comparison Time", j+1));
-                            Console.WriteLine("===================================");
+                            Console.WriteLine("==============================================");
+                            Console.WriteLine(String.Format("|{0,-15:s} : {1,25:d} |", "Query Number", i+1));
+                            Console.WriteLine(String.Format("|{0,-15:s} : {1,25:d} |", "Target ID", target));
+                            Console.WriteLine(String.Format("|{0,-15:s} : {1,25:s} |", "Resulted Name", employeelist[j].name));
+                            Console.WriteLine(String.Format("|{0,-15:s} : {1,25:d} |", "Position", j));
+                            Console.WriteLine(String.Format("|{0,-15:s} : {1,25:d} |", "Comparison Time", j+1));
+                            Console.WriteLine("==============================================");
                         }
                     }
                 }
