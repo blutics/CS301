@@ -14,6 +14,7 @@ namespace A117
         {
             try
             {
+                //StreamReader file = new StreamReader("test.txt");
                 StreamReader file = new StreamReader(args[0]);//SteamReader will be used for reading text from file
                 int n = int.Parse(file.ReadLine());
                 Employee[] employeelist = new Employee[n];//making a array for employee objects
