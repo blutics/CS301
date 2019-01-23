@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+//pwd : C:\Users\Student\Desktop\CS301\A124\bin\Debug
 //Command : A124.exe sorted100.txt query4sorted.txt
-//Command with manual file : A124.exe custom100.txt customquery.txt
+//Command with big file : A124.exe sorted_roster.txt queries_sorted.txt
 namespace A124
 {
     class Program
@@ -18,17 +20,18 @@ namespace A124
                 return 0;
             }
             Elist employeelist = new Elist(args[0]);
-            //Elist employeelist = new Elist("sorted100.txt");
+            //Elist employeelist = new Elist("sorted_roster.txt");
             try
             {
                 StreamReader queryfile = new StreamReader(args[1]);//SteamReader will be used for reading text from file
-                //StreamReader queryfile = new StreamReader("query4sorted.txt");
+                //StreamReader queryfile = new StreamReader("queries_sorted.txt");
 
                 int n = int.Parse(queryfile.ReadLine());
                 for (int i = 0; i < n; i++)//instanciating each employee, n times
                 {
                     employeelist.Query(i, int.Parse(queryfile.ReadLine()));
                 }
+                Console.WriteLine(String.Format("The average comparison time is {0}",employeelist.total/n));
             }
             catch (FileNotFoundException)
             {

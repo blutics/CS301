@@ -9,6 +9,7 @@ namespace A124
 {
     class Elist
     {
+        public double total = 0;
         public List<Employee> elist = new List<Employee>();
         public Elist(string filename)
         {
@@ -18,7 +19,6 @@ namespace A124
         {
             try
             {
-                Console.WriteLine(filename);
                 StreamReader file = new StreamReader(filename);//SteamReader will be used for reading text from file
                 int n = int.Parse(file.ReadLine());
                 for (int i = 0; i < n; i++)//instanciating each employee, n times
@@ -42,6 +42,7 @@ namespace A124
             Console.WriteLine(String.Format("|{0,-15:s} : {1,25:d} |", "Position", j));
             Console.WriteLine(String.Format("|{0,-15:s} : {1,25:d} |", "Comparison Time", result[1]));
             Console.WriteLine("==============================================");
+            total += result[1];
         }
         private int[] BinarySearch(int target)
         {
