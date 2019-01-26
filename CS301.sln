@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputGenerator", "InputGene
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A129", "A129\A129.csproj", "{3EBB7259-014B-4ADF-8D5D-17634B46CC81}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A131", "A131\A131.csproj", "{CF97F13A-6114-48A2-A254-1E7DE9E82A78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,18 @@ Global
 		{3EBB7259-014B-4ADF-8D5D-17634B46CC81}.Release|x64.Build.0 = Release|Any CPU
 		{3EBB7259-014B-4ADF-8D5D-17634B46CC81}.Release|x86.ActiveCfg = Release|Any CPU
 		{3EBB7259-014B-4ADF-8D5D-17634B46CC81}.Release|x86.Build.0 = Release|Any CPU
+		{CF97F13A-6114-48A2-A254-1E7DE9E82A78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF97F13A-6114-48A2-A254-1E7DE9E82A78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF97F13A-6114-48A2-A254-1E7DE9E82A78}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CF97F13A-6114-48A2-A254-1E7DE9E82A78}.Debug|x64.Build.0 = Debug|Any CPU
+		{CF97F13A-6114-48A2-A254-1E7DE9E82A78}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CF97F13A-6114-48A2-A254-1E7DE9E82A78}.Debug|x86.Build.0 = Debug|Any CPU
+		{CF97F13A-6114-48A2-A254-1E7DE9E82A78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF97F13A-6114-48A2-A254-1E7DE9E82A78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF97F13A-6114-48A2-A254-1E7DE9E82A78}.Release|x64.ActiveCfg = Release|Any CPU
+		{CF97F13A-6114-48A2-A254-1E7DE9E82A78}.Release|x64.Build.0 = Release|Any CPU
+		{CF97F13A-6114-48A2-A254-1E7DE9E82A78}.Release|x86.ActiveCfg = Release|Any CPU
+		{CF97F13A-6114-48A2-A254-1E7DE9E82A78}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
