@@ -38,9 +38,10 @@ namespace InputGenerator
             }
 
             int[] firstc = new int[1000];
-            StreamWriter file = new StreamWriter("input.txt");
+            
             Console.Write("How many people do you need?? ");
             int n = int.Parse(Console.ReadLine());
+            StreamWriter file = new StreamWriter(String.Format("input_{0}.txt",n));
             int id = 1;
             Random rnd = new Random();
             int[] randomCheck = new int[900000];

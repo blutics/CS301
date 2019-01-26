@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A124", "A124\A124.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputGenerator", "InputGenerator\InputGenerator.csproj", "{B1F7DAF0-BD41-41A5-AB8B-649E6E9DA81A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A129", "A129\A129.csproj", "{3EBB7259-014B-4ADF-8D5D-17634B46CC81}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,18 @@ Global
 		{B1F7DAF0-BD41-41A5-AB8B-649E6E9DA81A}.Release|x64.Build.0 = Release|Any CPU
 		{B1F7DAF0-BD41-41A5-AB8B-649E6E9DA81A}.Release|x86.ActiveCfg = Release|Any CPU
 		{B1F7DAF0-BD41-41A5-AB8B-649E6E9DA81A}.Release|x86.Build.0 = Release|Any CPU
+		{3EBB7259-014B-4ADF-8D5D-17634B46CC81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EBB7259-014B-4ADF-8D5D-17634B46CC81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EBB7259-014B-4ADF-8D5D-17634B46CC81}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3EBB7259-014B-4ADF-8D5D-17634B46CC81}.Debug|x64.Build.0 = Debug|Any CPU
+		{3EBB7259-014B-4ADF-8D5D-17634B46CC81}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3EBB7259-014B-4ADF-8D5D-17634B46CC81}.Debug|x86.Build.0 = Debug|Any CPU
+		{3EBB7259-014B-4ADF-8D5D-17634B46CC81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EBB7259-014B-4ADF-8D5D-17634B46CC81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EBB7259-014B-4ADF-8D5D-17634B46CC81}.Release|x64.ActiveCfg = Release|Any CPU
+		{3EBB7259-014B-4ADF-8D5D-17634B46CC81}.Release|x64.Build.0 = Release|Any CPU
+		{3EBB7259-014B-4ADF-8D5D-17634B46CC81}.Release|x86.ActiveCfg = Release|Any CPU
+		{3EBB7259-014B-4ADF-8D5D-17634B46CC81}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
