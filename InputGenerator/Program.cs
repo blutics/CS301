@@ -4,7 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/*
+Name:        Megaboz Pibepo
+ID:          75534
+Age:         52
+Job:         Granola Taster
+Hire year:   1982
+**************************** 
+ */
 namespace InputGenerator
 {
     class Program
@@ -13,15 +20,21 @@ namespace InputGenerator
         {
             StreamReader first = new StreamReader("firstname.txt");
             string[] firsta = new string[1000];
+            string[] joblist = {"Programmer", "Accountant", "Project Manager", "Graphic Designer", "Tester", "Systems Administrator",
+            "Analyst", "Technician", "Engineer", "Custodian", "Consierge", "Director", "Consultant", "Bookkeeper",
+            "Physicist", "Granola Taster", "Blacksmith", "Game Show Host", "Granola Miner", "Granola Smelter" };
+            
             for(int i = 0; i < 1000; i++)
             {
                 firsta[i] = first.ReadLine();
             }
+
             StreamReader last = new StreamReader("lastname.txt");
             string[] lasta = new string[1000];
-            for(int i = 0; i < 1000; i++)
+            for(int i = 1; i < 1000; i++)
             {
-                lasta[i] = last.ReadLine();
+                string tmp = last.ReadLine();
+                lasta[i] = tmp[0]+tmp.Substring(1).ToLower();
             }
 
             int[] firstc = new int[1000];
@@ -30,24 +43,29 @@ namespace InputGenerator
             int n = int.Parse(Console.ReadLine());
             int id = 1;
             Random rnd = new Random();
-            for(int i = 0; i < n; i++)
+            int[] randomCheck = new int[900000];
+            file.WriteLine(n);
+            int t = 0;
+            for (int i = 0; i < n; i++)
             {
                 int firstn;
+                firstn = rnd.Next(0, 1000);
+                int lastn = rnd.Next(0, 1000);
+                int year = rnd.Next(1950, 2019);
                 while (true)
                 {
-                    firstn = rnd.Next(0, 1000);
-                    if (firstc[firstn] == 0)
+                    t = rnd.Next(0, 900000 - 1);
+                    if (randomCheck[t] == 0)
                     {
-                        firstc[firstn] = 1;
+                        id = t;
+                        randomCheck[t] = 1;
                         break;
                     }
                 }
-                int lastn = rnd.Next(0, 1000);
-                int year = rnd.Next(1950, 2019);
-                id += rnd.Next(0, 100);
-                int age = 2019 - year + rnd.Next(5, 20));
-                Console.WriteLine(rnd.Next(1,30));
+                int age = 2019 - year + rnd.Next(20, 30);
+                file.WriteLine(String.Format("{0} {1}|{2}|{3}|{4}|{5}",firsta[firstn],lasta[lastn],id, age,joblist[rnd.Next(0,joblist.Length)],year));
             }
+            file.Close();
             
         }
     }
