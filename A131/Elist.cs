@@ -10,9 +10,11 @@ namespace A131
     class Elist
     {
         public double total = 0;
+        private string sfile;
         public List<Employee> elist = new List<Employee>();
         public Elist(string filename)
         {
+            sfile = filename;
             this.Dataset(filename);
         }
         public void Dataset(string filename)
@@ -40,7 +42,7 @@ namespace A131
             int i;
             for (int j = 1; j < n; j++)
             {
-                key = elist[j];
+                key = elist[j];//element in j will be swapped
                 i = j - 1;
                 while (i>=0)
                 {
@@ -53,11 +55,15 @@ namespace A131
                     count += 1;
                     bcount += 1;
                 }
-                elist[i + 1] = key;
+                elist[i + 1] = key;//put the key object in the right place
                 count += 1;
+                if (sfile.Equals("small.txt"))
+                {
+                    this.PrintState();
+                }
             }
             StreamWriter file = new StreamWriter("output.txt");
-            foreach(Employee k in elist)
+            foreach(Employee k in elist)//the resulte stores at the output.txt file
             {
                 file.WriteLine(k.RawPrint());
             }
@@ -66,6 +72,14 @@ namespace A131
             Console.WriteLine(String.Format("|{0,-10:s} : {1,20:d}|", "Comparison", bcount));
             Console.WriteLine(String.Format("|{0,-10:s} : {1,20:d}|", "Exchange", count));
             Console.WriteLine("===================================");
+        }
+        private void PrintState()
+        {
+            foreach (Employee i in elist)
+            {
+                Console.Write(String.Format("{0} ", i.id));
+            }
+            Console.Write("\n");
         }
     }
 }
