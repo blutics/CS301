@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//pwd : C:\Users\Student\Desktop\CS301\A129\bin\Debug
+//pwd : cd C:\Users\Student\Desktop\CS301\A129\bin\Debug
 //Command with small text       : A129.exe small.txt 
 //Command with input text       : A129.exe input.txt
 //Command with input_100   text : A129.exe input_100.txt
