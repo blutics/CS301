@@ -16,21 +16,23 @@ namespace A205
     class Program
     {
         static int Main(string[] args)
-        {      
+        {
             if (args.Length != 1)
             {
                 Console.WriteLine("This program requires input text files.");
                 return 0;
             }
+            //string filename = "small.txt";
+            string filename = args[0];
             try
             {
-                //Elist employeelist = new Elist("small.txt");
-                Elist employeelist = new Elist(args[0]);
+                StreamReader file = new StreamReader(filename);//SteamReader will be used for reading text from file
+                Elist employeelist = new Elist(filename, file);
                 employeelist.SelectionSort();
             }
             catch (FileNotFoundException)
             {
-                Console.WriteLine(String.Format("{0} does not exist!", args[0]));
+                Console.WriteLine(String.Format("{0} does not exist!", filename));
                 //Console.WriteLine(String.Format("{0} does not exist!", "query4sorted.txt"));
             }
             return 0;

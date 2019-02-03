@@ -12,26 +12,18 @@ namespace A205
         public double total = 0;
         private string sfile;
         public List<Employee> elist = new List<Employee>();
-        public Elist(string filename)
+        public Elist(string filename, StreamReader file)
         {
             sfile = filename;
-            this.Dataset(filename);
+            this.Dataset(file);
         }
-        public void Dataset(string filename)
+        public void Dataset(StreamReader file)
         {
-            try
+            int n = int.Parse(file.ReadLine());
+            for (int i = 0; i < n; i++)//instanciating each employee, n times
             {
-                StreamReader file = new StreamReader(filename);//SteamReader will be used for reading text from file
-                int n = int.Parse(file.ReadLine());
-                for (int i = 0; i < n; i++)//instanciating each employee, n times
-                {
-                    elist.Add(new Employee(file.ReadLine()));//init!
-                }
-            }
-            catch (FileNotFoundException)
-            {
-                Console.WriteLine(String.Format("{0} does not exist!", filename));
-            }
+                elist.Add(new Employee(file.ReadLine()));//init!
+            }   
         }
         private void SwapEmployees(int a, int b)
         {
