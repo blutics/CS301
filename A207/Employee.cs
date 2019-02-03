@@ -13,7 +13,7 @@ namespace A207
         int age;
         string job;
         int year;
-        string rawdata;
+        public string rawdata;
         public Employee(string data)
         {
             string[] tmp = data.Split('|');

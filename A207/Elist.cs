@@ -12,6 +12,7 @@ namespace A207
         public double total = 0;
         private string sfile;
         public List<Employee> elist = new List<Employee>();
+        private int count = 0;
         public Elist(string filename, StreamReader file)
         {
             sfile = filename;
@@ -27,24 +28,27 @@ namespace A207
         }
         public void Merge(int p, int q, int r)
         {
-            Console.WriteLine(String.Format("{0} {1} {2}", p, q, r));
             int n1 = q - p + 1;
             int n2 = r - q ;
-            Employee[] Left = new Employee[n1];
-            Employee[] Right = new Employee[n2];
+            Employee[] Left = new Employee[n1+1];
+            Employee[] Right = new Employee[n2+1];
             for(int i = 0; i < n1; i++)
             {
-                Left[i] = elist[p+i-1];
+                Left[i] = elist[p+i];
             }
             for(int j = 0; j < n2; j++)
             {
-                Right[j] = elist[q+j];
+                Right[j] = elist[q+j+1];
             }
-            
+            Left[n1] = new Employee(elist[0].rawdata);
+            Right[n2] = new Employee(elist[0].rawdata);
+            Left[n1].id = 999999999;
+            Right[n2].id = 999999999;
             int a = 0;
             int b = 0;
             for(int k = p; k <= r; k++)
             {
+                count += 1;
                 if (Left[a].id <= Right[b].id)
                 {
                     elist[k] = Left[a];
@@ -62,10 +66,14 @@ namespace A207
             if (p < r)
             {
                 int q = (int)((p + r) / 2);
-                PrintState();
+                
                 MergeSort(p, q);
                 MergeSort(q+1, r);
                 Merge(p, q, r);
+                if (sfile == "small.txt")
+                {
+                    PrintState();
+                }
             }
             
         }
@@ -80,8 +88,7 @@ namespace A207
             file.Close();
             Console.WriteLine("===================================");
             Console.WriteLine(String.Format("|{0,-30:s}|", " ** Insertion Sorting Result *** "));
-            Console.WriteLine(String.Format("|{0,-10:s} : {1,20:d}|", "Comparison", 1));
-            Console.WriteLine(String.Format("|{0,-10:s} : {1,20:d}|", "Exchange", 1));
+            Console.WriteLine(String.Format("|{0,-10:s} : {1,20:d}|", "Comparison", count));
             Console.WriteLine("===================================");
         }
         private void PrintState()
