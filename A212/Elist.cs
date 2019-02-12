@@ -104,7 +104,7 @@ namespace A212
                 PrintState();
             }
             Console.WriteLine("===================================");
-            Console.WriteLine(String.Format("|{0,-30:s}|", " ** Insertion Sorting Result *** "));
+            Console.WriteLine(String.Format("|{0,-30:s}|", " ** Heap Sorting Result *** "));
             Console.WriteLine(String.Format("|{0,-10:s} : {1,20:d}|", "Comparison", count));
             Console.WriteLine(String.Format("|{0,-10:s} : {1,20:d}|", "Exchange", exchange));
             Console.WriteLine("===================================");
