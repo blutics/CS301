@@ -10,17 +10,18 @@ namespace A305
     {
         static void Main(string[] args)
         {
-            new HashTableOne("hash1.txt");
-            new HashTableOne("hash2.txt");
-            new HashTableOne("hash3.txt");
-
-            new HashTableTwo("hash1.txt");
-            new HashTableTwo("hash2.txt");
-            new HashTableTwo("hash3.txt");
-
-            new HashTableThree("hash4.txt");
-            new HashTableThree("hash5.txt");
-            new HashTableThree("hash6.txt");
+            //making tables!
+            if (args.Length == 0)
+            {
+                Console.WriteLine("We need a file!");
+            }
+            else
+            {
+                new HashTableOne(args[0]);
+                new HashTableTwo(args[0]);
+                new HashTableThree(args[0]);
+            }
+            
         }
     }
 }

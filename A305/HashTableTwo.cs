@@ -22,10 +22,10 @@ namespace A305
                 this.hashTable = new Employee[m + 1];
                 int k;
                 Console.WriteLine(String.Format("Hashing Algorithm Part 2 >>>> FileName : {0}", filename));
-                for (int i = 0; i < n; i++)//instanciating each employee, n times
+                for (int i = 0; i < n; i++)//instanciating each employee, n times, also put the item in a right place
                 {
                     employees.Add(new Employee(file.ReadLine()));//init!
-                    k = (int)(m*((employees[i].id*(Math.Sqrt(5)-1)/2) % 1));
+                    k = (int)(m*((employees[i].id*(Math.Sqrt(5)-1)/2) % 1));//calculating key number!
                     employees[i].setIndex(k);
                     employees[i].print();
                     if (hashTable[k] != null)

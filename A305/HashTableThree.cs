@@ -26,10 +26,10 @@ namespace A305
                     hashTable[i] = new List<Employee>();
                 }
                 Console.WriteLine(String.Format("Hashing Algorithm Part 3 >>>> FileName : {0}", filename));
-                for (int i = 0; i < n; i++)//instanciating each employee, n times
+                for (int i = 0; i < n; i++)//instanciating each employee, n times, also put the item in a right place
                 {
                     employees.Add(new Employee(file.ReadLine()));//init!
-                    k = employees[i].id % m;
+                    k = employees[i].id % m;//calculating key number!
                     employees[i].setIndex(k);
                     employees[i].print();
                     Console.WriteLine(String.Format(" ({0} collisions)", hashTable[k].Count));
