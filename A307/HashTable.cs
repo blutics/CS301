@@ -26,7 +26,7 @@ namespace A307
                 {
                     hashTable[i] = new List<Employee>();
                 }
-                Console.WriteLine(String.Format("Hashing Algorithm Part 3 >>>> FileName : {0}", filename));
+                Console.WriteLine(String.Format("Hashing Algorithm  >>>> FileName : {0}", filename));
                 for (int i = 0; i < n; i++)//instanciating each employee, n times, also put the item in a right place
                 {
                     employees.Add(new Employee(file.ReadLine()));//init!
@@ -41,7 +41,7 @@ namespace A307
                 int q = int.Parse(file.ReadLine());
                 for(int i = 0; i < q; i++)
                 {
-                    Query(file.ReadLine());
+                    Query(file.ReadLine()); //Call Query function with person's name
                 }
             }
             catch (FileNotFoundException)
@@ -49,7 +49,7 @@ namespace A307
                 Console.WriteLine("the file does not exit!  <<<<<<<<<<<<<<<<<");
             }
         }
-        private int MakeKey(string given)
+        private int MakeKey(string given)//the Function to make a key with ASCII number of each character
         {
             int seed = given.Length;
             foreach(char i in given)
@@ -63,18 +63,18 @@ namespace A307
             int tmp = MakeKey(name);
             foreach(Employee i in hashTable[tmp])
             {
-                count++;
+                count++;//Count every time, 
                 if (i.name == name)
                 {
                     Console.WriteLine("=====================================================================");
                     Console.WriteLine(String.Format("{0} after {1} collisions at index {2} in the hashtable.", i.name, hashTable[tmp].Count, tmp));
                     i.PrintInfo();
-                    return true;
+                    return true;//if the one searching for is machted in this loop finisiing this Query function.
                 }
             }
-            Console.WriteLine("===================================");
-            Console.WriteLine(String.Format("|{0,-10:s} : {1,-30:s}|", name, "doesn't exist in the table."));
-            Console.WriteLine("===================================");
+            Console.WriteLine("=====================================================================");
+            Console.WriteLine(String.Format("|{0,-10:s} : {1,-30:s}|", name, "doesn't exist in the table.<<<<<<<<<<<<<<<<<<<<<<<<<"));
+            Console.WriteLine("=====================================================================");
             return false;
         }
     }

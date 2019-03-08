@@ -12,15 +12,15 @@ namespace A307
         {
             HashTable tmp = null;
             //making tables!
-            if (args.Length != 0)
+            if (args.Length == 0)
             {
                 Console.WriteLine("We need a file!");
             }
             else
             {
-                tmp = new HashTable("lookup3.txt");
+                tmp = new HashTable(args[0]);
+                Console.WriteLine(String.Format("Total collisions during lookup phase: {0}", tmp.count));
             }
-            Console.WriteLine(String.Format("Total collisions during lookup phase: {0}", tmp.count));
         }
     }
 }
