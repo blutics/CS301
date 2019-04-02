@@ -22,7 +22,7 @@ namespace A402
                 StreamReader file = new StreamReader(args[0]);
                 string letters = file.ReadLine();
                 length = letters.Length;
-                for (int i = 0; i < letters.Length; i++)
+                for (int i = 0; i < letters.Length; i++)//setting up the hashtable
                 {
                     T[letters[i]] = i;
                 }
@@ -30,20 +30,20 @@ namespace A402
                 {
                     root[i] = i;
                 }
-                while (!file.EndOfStream)
+                while (!file.EndOfStream)//saving outputs
                 {
                     string input = file.ReadLine();
                     Edges.Add(new Edge(input));
                 }
-                Edges.Sort(delegate (Edge A, Edge B)
+                Edges.Sort(delegate (Edge A, Edge B)//sorting
                 {
                     if (A.w > B.w) return 1;
                     else if (A.w < B.w) return -1;
                     else return 0;
                 });
-                foreach (Edge k in Edges)
+                foreach (Edge k in Edges)//calulating
                 {
-                    if (find((int)T[k.vertex[0]]) != find((int)T[k.vertex[1]]))
+                    if (find((int)T[k.vertex[0]]) != find((int)T[k.vertex[1]]))//figuring out if it is making cycle or not
                     {
                         union((int)T[k.vertex[0]], (int)T[k.vertex[1]]);
                         Result.Add(k);
@@ -51,9 +51,8 @@ namespace A402
                     }
                 }
                 Console.WriteLine(String.Format("MST has a weight of {0} and consists of these edges:", weight));
-                foreach (Edge k in Result)
+                foreach (Edge k in Result)//printing result
                 {
-                    //Console.WriteLine(String.Format("{0} - {1} : {2} - {3}", k.vertex[0], k.vertex[1], find((int)T[k.vertex[0]]), find((int)T[k.vertex[1]])));
                     k.print();
                 }
             } catch (FileNotFoundException)
@@ -66,11 +65,11 @@ namespace A402
             }
             
         }
-        static int find(int x)
+        static int find(int x)//looking up the root node
         {
             return root[x]==x?x:find(root[x]);
         }
-        static void union(int x, int y)
+        static void union(int x, int y)//grouping!
         {
             int a = find(x);
             int b = find(y);
